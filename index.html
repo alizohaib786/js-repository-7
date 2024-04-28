@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript no 7</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Toastify-js -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+</head>
+
+<body>
+    <header style="background-color: #1d3557;">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand text-light" href="#">Assignment</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon navbar-toggler-light"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active text-light" aria-current="page" href="#">Chapter 31-38</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-light" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col mt-5">
+                    <h3 class="text-center">Chapter # 31-38 | Date & Time, Funtions: Passing them data and get data from
+                        them</h3>
+                    <hr>
+                </div>
+            </div>
+            <!-- Input group -->
+            <div class="row mt-4">
+                <div class="col-12 col-md-6">
+                    <h3 class="text-center">Input</h3>
+                    <div class="border border-secondary rounded-3 h-75 p-3 d-flex align-items-center">
+                        <div class="input-group">
+                            <label for="inputText" class="visually-hidden">Type your text here</label>
+                            <input type="datetime-local" id="inputText" class="form-control bg-transparent"
+                                placeholder="Type your text here">
+                            <button class="btn btn-outline-secondary" onclick="clearBtn(this)">Clear</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Original-String -->
+                <div class="col mt-sm-4 mt-md-0 mt-lg-0 mt-4">
+                    <h3 class="text-center">Current Date and Time</h3>
+                    <div class="border rounded-3 h-75 py-3 d-flex align-items-center justify-content-center text-white "
+                        style="background-color: #1d3557;">
+                        <div id="originalString">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Buttons and output section -->
+
+
+            <div class="row mt-5">
+                <div class="col-12 mb-4 col-md-6 mb-md-0">
+                    <h4 class="text-center">Buttons</h4>
+                    <div class="border border-secondary rounded-3 p-4 px-lg-2 py-lg-2 p-md-3 p-sm-3">
+                        <div class="buttons text-center">
+                            <button class="btn btn-danger col-12 col-lg-12 col-md-12 mb-1"
+                                onclick="getNameOfToday()">Get Name of Today</button>
+                            <button class="btn btn-danger col-12 col-lg-12 col-md-12 mb-1"
+                                onclick="sinceIBorn()">Calculatate days Passed since I born</button>
+                            <button class="btn btn-danger col-12 col-lg-12 col-md-12 mb-1" onclick="yourBirthday()">when
+                                is your Birthday?</button>
+                            <button class="btn btn-danger col-12 col-lg-12 col-md-12 mb-1" onclick="greetUser()">Greet
+                                User</button>
+                            <button class="btn btn-danger col-12 col-lg-12 col-md-12 mb-1" onclick="tellTime1()">Tell
+                                time 1</button>
+                            <button class="btn btn-danger col-12 col-lg-12 col-md-12 mb-1" onclick="tellTime2()">Tell
+                                time 2</button>
+                            <button class="btn btn-danger col-12 col-lg-12 col-md-12 mb-1" onclick="tellTime3()">Tell
+                                time 3</button>
+                            <button class="btn btn-danger col-12 col-lg-12 col-md-12 mb-1"
+                                onclick="calculateTaxBtn()">Calculate Tax</button>
+                            <button class="btn btn-danger col-12 col-lg-12 col-md-12 mb-1"
+                                onclick="calculateTotalBtn()">Calculate Total = Price + Tax </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- output -->
+                <div class="col col-12 col-lg-6 col-md-6 mb-4 col-sm-12">
+                    <h3 class="text-center">Output / Result</h3>
+                    <div class="border border-secondary rounded-3 text-center h-75 py-5"
+                        id="output">
+                    </div>
+                    <div class="d-flex justify-content-center align-items-center">
+                        <button onclick="clearOutput(this)"
+                            class="btn btn-light border border-secondary btn-outline-secondary rounded-3 mt-4 mb-4">Clear
+                            Button</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container-fluid mt-5 mt-lg-5 mt-sm-5 mt-md-5">
+            <div class="row">
+                <div class="col text-center text-light py-3" style="background-color: #1d3557;">
+                    <p class="mb-0">&copy; 2024. All rights reserved. <b>Made by AZR.</b></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- Toastify-js -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>
